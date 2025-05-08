@@ -1,1 +1,63 @@
 @import "tailwindcss";
+@import "@nuxt/ui";
+
+@tailwind utilities;
+
+@utility container {
+  margin-inline: auto;
+
+  max-width: 363px;
+  padding-inline: 12px;
+  
+  @variant xs {
+    max-width: 456px;
+    padding-inline: 0;
+  }
+
+  @variant sm {
+    max-width: 704px;
+  }
+
+  @variant md {
+    max-width: 896px;
+  }
+  
+  @variant lg {
+    max-width: 1040px;
+  }
+
+  @variant xl {
+    max-width: 1296px;
+  }
+  
+  @variant 2xl {
+    max-width: 1620px;
+  }
+}
+
+@theme {
+  --breakpoint-xs: 480px;
+  --breakpoint-sm: 768px;
+  --breakpoint-xl: 1536px;
+  --breakpoint-md: 1024px;
+  --breakpoint-lg: 1280px;
+  --breakpoint-xl: 1536px;
+  --breakpoint-2xl: 1920px;
+}
+
+
+
+:root {
+    --ui-primary: white;
+    --ui-secondary: white;
+    --ui-success: var(--ui-color-success-500);
+    --ui-info: var(--ui-color-info-500);
+    --ui-warning: var(--ui-color-warning-500);
+    --ui-error: var(--ui-color-error-500);
+    --ui-text: #000;
+    
+  }
+
+  body{
+    background-color: white;
+}

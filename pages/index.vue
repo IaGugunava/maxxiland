@@ -4,7 +4,7 @@
 
 <template>
     <div>
-        home page
+        <MainBanner/>
     </div>
 </template>
 
