@@ -10,10 +10,20 @@ export default defineNuxtConfig({
     }
   },
 
-  modules: ['@nuxt/image', '@nuxt/ui'],
+  runtimeConfig: {
+    public: {
+      NUXT_PUBLIC_BASE_URL: process.env.NUXT_PUBLIC_BASE_URL,
+    }
+  },
+
+  modules: ['@nuxt/image', '@nuxt/ui', 'nuxt-swiper'],
   components: [{ path: "./components", pathPrefix: false }],
   //@ts-ignore
   tailwindcss: {
     configPath: 'tailwind.config.ts',
   },
+  swiper: {
+    //@ts-ignore
+    modules: ["autoplay"]
+  }
 })
