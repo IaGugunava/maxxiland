@@ -3,19 +3,19 @@
 </script>
 
 <template>
-    <div class="flex justify-between items-center p-5">
-        <NuxtLink to="/" class="w-[100px] h-[50px]">
+    <div class="flex justify-between items-center p-5 relative z-20">
+        <NuxtLink to="/" class="w-[100px] h-[50px] bg-white flex items-center justify-center">
             <img src="../../../assets/images/logo-green-black.png"/>
         </NuxtLink>
 
         <div class="flex items-center gap-5">
-            <NuxtLink class="text-black text-lg font-semibold transition-all duration-300 ease-in-out" to="about-us">
+            <NuxtLink class="text-white text-lg font-semibold transition-all duration-300 ease-in-out" to="about-us">
                 about us
             </NuxtLink>
-            <NuxtLink class="text-black text-lg font-semibold transition-all duration-300 ease-in-out" to="services">
+            <NuxtLink class="text-white text-lg font-semibold transition-all duration-300 ease-in-out" to="services">
                 services
             </NuxtLink>
-            <NuxtLink class="text-black text-lg font-semibold transition-all duration-300 ease-in-out" to="contact">
+            <NuxtLink class="text-white text-lg font-semibold transition-all duration-300 ease-in-out" to="contact">
                 contact
             </NuxtLink>
         </div>
