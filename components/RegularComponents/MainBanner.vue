@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { apiFetch } from '~/composables/helpers';
 
 const { data, pending, error } = await apiFetch('/api/main-banners?populate=*');
 
