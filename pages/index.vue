@@ -10,6 +10,7 @@ import Services from '~/components/RegularComponents/services/Services.vue';
         <MainBanner/>
         <Services/>
         <Gallery/>
+        <AboutUsMain/>
     </div>
 </template>
 

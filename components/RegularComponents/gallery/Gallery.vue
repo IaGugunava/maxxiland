@@ -38,7 +38,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="py-20 overflow-x-hidden">
+  <div class="pt-20 overflow-x-hidden">
     <div class="container">
       <div class="mb-8">
         <h2
