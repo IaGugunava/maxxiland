@@ -16,7 +16,12 @@ export default defineNuxtConfig({
     }
   },
 
-  modules: ['@nuxt/image', '@nuxt/ui', 'nuxt-swiper'],
+  modules: [
+    '@nuxt/image',
+    '@nuxt/ui',
+    'nuxt-swiper',
+    'nuxt-easy-lightbox'
+  ],
   components: [{ path: "./components", pathPrefix: false }],
   //@ts-ignore
   tailwindcss: {

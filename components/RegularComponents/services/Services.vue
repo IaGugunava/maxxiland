@@ -12,7 +12,7 @@ const servicesMedia = (url: string) => {
 
 <template>
   <div class="pt-20">
-    <div class="container">
+    <div v-if="servicesData?.length" class="container">
       <h2
         class="w-full text-black text-3xl font-bold flex items-center justify-center text-center"
       >

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { apiFetch } from '~/composables/helpers';
 
 const { data, pending, error } = await apiFetch('/api/main-banners?populate=*');
 
@@ -32,7 +33,7 @@ const bannerMedia = (url: string) => {
         
                              :src="bannerMedia(item?.image?.formats?.large?.url)"/>
                         </div>
-                        <div class="absolute bottom-[300px] left-[50px]">
+                        <div class="absolute bottom-[300px] left-[150px]">
                             <h1 class="text-white text-4xl font-bold mb-2">
                                 {{ item?.title }}
                             </h1>
