@@ -17,27 +17,24 @@ const bannerMedia = (url: string) => {
 <template>
     <div class="relative h-full">
         <div class="w-full h-full">
-
             <swiper-container
                 :slides-per-view="1"
-                :autoplay="{
-                    delay: 5000
-                }"
+                
                 :loop="true"
             >
                 <swiper-slide v-for="item in bannersData" :key="item?.id">
                     <div class="relative">
                         <div class="h-full group w-full overflow-hidden">
                             <NuxtImg
-                            class="aspect-[351/296] h-full w-full object-cover sm:aspect-[344/296] md:aspect-[436/296] 2xl:aspect-[1920/1000]"
+                            class="h-full w-full object-cover aspect-[375/296] sm:aspect-[1920/1000]"
         
                              :src="bannerMedia(item?.image?.formats?.large?.url)"/>
                         </div>
-                        <div class="absolute bottom-[300px] left-[150px]">
-                            <h1 class="text-white text-4xl font-bold mb-2">
+                        <div class="absolute bottom-[50px] lg:bottom-[150px] xl:bottom-[250px] left-[50px] lg:left-[100px] 2xl:left-[150px]">
+                            <h1 class="text-white text-2xl lg:text-4xl font-bold mb-2 sm:mb-4">
                                 {{ item?.title }}
                             </h1>
-                            <p class="text-white text-lg max-w-[1000px] mb-4">
+                            <p class="text-white text-sm lg:text-lg max-w-full pr-[50px] sm:pr-0 sm:max-w-1/2 md:max-w-[700px] line-clamp-4 sm:line-clamp-6 xl:max-w-[1000px] mb-4 sm:mb-8">
                                 {{ item?.description }}
                             </p>
     

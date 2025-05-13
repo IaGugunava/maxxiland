@@ -2,11 +2,11 @@
 
 <template>
   <div class="py-20">
-    <div class="container flex items-center justify-center gap-20">
-      <div class="w-1/2 flex justify-end flex-col gap-4">
-        <h2 class="text-black text-3xl font-bold text-end">Why choose us</h2>
+    <div class="container flex items-center flex-col md:flex-row justify-center gap-10 md:gap-20">
+      <div class="w-full md:w-1/2 flex justify-end flex-col gap-4">
+        <h2 class="text-black text-3xl font-bold text-start md:text-end">Why choose us</h2>
 
-        <p class="text-black text-lg text-end">
+        <p class="text-black text-lg text-start md:text-end">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sem
           lorem, molestie et rutrum sed, molestie vel enim. Donec malesuada
           imperdiet interdum. Pellentesque turpis nunc, lacinia ac dui et,
@@ -20,12 +20,12 @@
           amet, aliquet nec enim.
         </p>
 
-        <NuxtLink to="about-us" class="w-full flex justify-end">
+        <NuxtLink to="about-us" class="w-full flex justify-start md:justify-end">
             <CustomButton text="show more" class="w-fit"/>
         </NuxtLink>
       </div>
 
-      <div class="w-1/2">
+      <div class="w-full md:w-1/2">
         <img src="../../../assets/images/image.jpg" />
       </div>
     </div>

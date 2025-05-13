@@ -56,6 +56,20 @@ onMounted(() => {
       :space-between="70"
       :loop="true"
       effect="coverflow"
+      :breakpoints="{
+        0: {
+          slidesPerView: 1.09,
+        },
+        480: {
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerView: 1,
+        },
+        1024: {
+          slidesPerView: 2,
+        },
+      }"
       :coverflowEffect="{
         rotate: 0,
         stretch: 0,
