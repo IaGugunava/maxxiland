@@ -5,6 +5,7 @@
 <template>
     <div>
         <MainBanner/>
+        <Services/>
     </div>
 </template>
 
