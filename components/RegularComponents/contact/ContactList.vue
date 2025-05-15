@@ -4,8 +4,7 @@
 
 <template>
     <div>
-        <AboutBanner/>
-        <AboutText/>
+        contact list
     </div>
 </template>
 
