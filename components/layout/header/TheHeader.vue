@@ -9,13 +9,13 @@
         </NuxtLink>
 
         <div class="flex items-center gap-5">
-            <NuxtLink class="text-black text-lg font-semibold transition-all duration-300 ease-in-out" to="about-us">
+            <NuxtLink class="text-black text-lg font-semibold transition-all duration-300 ease-in-out" to="/about-us">
                 about us
             </NuxtLink>
-            <NuxtLink class="text-black text-lg font-semibold transition-all duration-300 ease-in-out" to="services">
+            <NuxtLink class="text-black text-lg font-semibold transition-all duration-300 ease-in-out" to="/services">
                 services
             </NuxtLink>
-            <NuxtLink class="text-black text-lg font-semibold transition-all duration-300 ease-in-out" to="contact">
+            <NuxtLink class="text-black text-lg font-semibold transition-all duration-300 ease-in-out" to="/contact">
                 contact
             </NuxtLink>
         </div>

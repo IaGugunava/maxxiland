@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { getSingleUrl } from '#imports';
 const { data, pending, error } = await apiFetch("/api/services?populate=*");
 
 const servicesData = computed(() => (!error.value ? data?.value?.data : null));
@@ -8,68 +9,195 @@ const { $strapiMedia } = useNuxtApp();
 const servicesMedia = (url: string) => {
   return $strapiMedia(url);
 };
+
+
 </script>
 
 <template>
-  <div class="pt-20">
+  <div class="py-20">
     <div v-if="servicesData?.length" class="container">
       <h2
-        class="w-full text-black text-3xl font-bold flex items-center justify-center text-center"
+        class="w-full text-black text-3xl font-bold flex items-center justify-center text-center mb-8"
       >
         services
       </h2>
-      <div class="main flex mt-8">
-        <div class="services-container">
-          <div
-            class="services-item flex items-center justify-center"
-            v-for="item in servicesData"
-            :style="`background-image: url(${servicesMedia(
-              item?.image?.formats?.large?.url
-            )})`"
-          >
-            <div class="bg-blue-800 relative top-1/2">
-              <p class="text-dark">
-                {{ item?.name }}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+
+      <ul id="hexGrid">
+        <li class="hex" v-for="item in servicesData" :key="item?.id">
+          <!-- {{ getSingleUrl('services', item?.name) }} -->
+          <NuxtLink :to="getSingleUrl('services', item)" class="hexIn">
+            <a class="hexLink" href="#">
+              <NuxtImg :src="servicesMedia(item?.image?.formats?.large?.url)" />
+              <h3>{{ item?.name }}</h3>
+              <p>{{ item?.short_description }}</p>
+            </a>
+          </NuxtLink>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
 
 <style scoped>
-.main {
-  --s: 400px; /* size  */
-  --m: 8px; /* margin */
-  --f: calc(1.732 * var(--s) + 4 * var(--m) - 1px);
+#hexGrid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+  list-style-type: none;
 }
 
-.services-container {
-  font-size: 0;
+.hex {
+  position: relative;
+  visibility:hidden;
+  outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
+}
+.hex::after{
+  content:'';
+  display:block;
+  padding-bottom: 86.602%;  /* =  100 / tan(60) * 1.5 */
+}
+.hexIn{
+  position: absolute;
+  width:96%;
+  padding-bottom: 110.851%; /* =  width / sin(60) */
+  margin:0 2%;
+  overflow: hidden;
+  visibility: hidden;
+  outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
+  -webkit-transform: rotate3d(0,0,1,-60deg) skewY(30deg);
+      -ms-transform: rotate3d(0,0,1,-60deg) skewY(30deg);
+          transform: rotate3d(0,0,1,-60deg) skewY(30deg);
+}
+.hexIn * {
+  position: absolute;
+  visibility: visible;
+  outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
+}
+.hexLink {
+    display:block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+    -webkit-transform: skewY(-30deg) rotate3d(0,0,1,60deg);
+        -ms-transform: skewY(-30deg) rotate3d(0,0,1,60deg);
+            transform: skewY(-30deg) rotate3d(0,0,1,60deg);
 }
 
-.services-container .services-item {
-  width: var(--s);
-  margin: var(--m);
-  height: calc(var(--s) * 1.1547);
-  display: inline-block;
-  font-size: initial;
-  clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
-  margin-bottom: calc(var(--m) - var(--s) * 0.2885);
+/*** HEX CONTENT **********************************************************************/
+.hex img {
+  left: -100%;
+  right: -100%;
+  width: auto;
+  height: 100%;
+  margin: 0 auto;
+  object-fit: cover;
+  -webkit-transform: rotate3d(0,0,0,0deg);
+      -ms-transform: rotate3d(0,0,0,0deg);
+          transform: rotate3d(0,0,0,0deg);
 }
-.services-container .services-item:nth-child(odd) {
-  background: green;
+
+.hex h3, .hex p {
+  width: 100%;
+  padding: 5%;
+  box-sizing:border-box;
+  background-color: rgba(0, 128, 128, 0.8);
+  font-weight: 300;
+  -webkit-transition:  -webkit-transform .2s ease-out, opacity .3s ease-out;
+          transition:          transform .2s ease-out, opacity .3s ease-out;
 }
-.services-container::before {
-  content: "";
-  width: calc(var(--s) / 2 + var(--m));
-  float: left;
-  height: 120%;
-  shape-outside: repeating-linear-gradient(
-    #0000 0 calc(var(--f) - 3px),
-    #000 0 var(--f)
-  );
+.hex h3 {
+  bottom: 50%;
+  padding-top:50%;
+  font-size: 1.5em;
+  z-index: 1;
+  -webkit-transform:translate3d(0,-100%,0);
+      -ms-transform:translate3d(0,-100%,0);
+          transform:translate3d(0,-100%,0);
+}
+.hex h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 45%;
+  width: 10%;
+  text-align: center;
+  border-bottom: 1px solid #fff;
+}
+.hex p {
+  top: 50%;
+  padding-bottom:50%;
+  -webkit-transform:translate3d(0,100%,0);
+      -ms-transform:translate3d(0,100%,0);
+          transform:translate3d(0,100%,0);
+}
+
+
+/*** HOVER EFFECT  **********************************************************************/
+.hexLink:hover h3, .hexLink:focus h3,
+.hexLink:hover p, .hexLink:focus p{
+  -webkit-transform:translate3d(0,0,0);
+      -ms-transform:translate3d(0,0,0);
+          transform:translate3d(0,0,0);
+}
+
+/*** HEXAGON SIZING AND EVEN ROW INDENTATION *****************************************************************/
+@media (min-width:1201px) { /* <- 5-4  hexagons per row */
+  #hexGrid{
+    padding-bottom: 4.4%
+  }
+  .hex {
+    width: 20%; /* = 100 / 5 */
+  }
+  .hex:nth-child(9n+6){ /* first hexagon of even rows */
+    margin-left:10%;  /* = width of .hex / 2  to indent even rows */
+  }
+}
+
+@media (max-width: 1200px) and (min-width:901px) { /* <- 4-3  hexagons per row */
+  #hexGrid{
+    padding-bottom: 5.5%
+  }
+  .hex {
+    width: 25%; /* = 100 / 4 */
+  }
+  .hex:nth-child(7n+5){ /* first hexagon of even rows */
+    margin-left:12.5%;  /* = width of .hex / 2  to indent even rows */
+  }
+}
+
+@media (max-width: 900px) and (min-width:601px) { /* <- 3-2  hexagons per row */
+  #hexGrid{
+    padding-bottom: 7.4%
+  }
+  .hex {
+    width: 33.333%; /* = 100 / 3 */
+  }
+  .hex:nth-child(5n+4){ /* first hexagon of even rows */
+    margin-left:16.666%;  /* = width of .hex / 2  to indent even rows */
+  }
+}
+
+@media (max-width: 600px) { /* <- 2-1  hexagons per row */
+  #hexGrid{
+    padding-bottom: 11.2%
+  }
+  .hex {
+    width: 50%; /* = 100 / 3 */
+  }
+  .hex:nth-child(3n+3){ /* first hexagon of even rows */
+    margin-left:25%;  /* = width of .hex / 2  to indent even rows */
+  }
+}
+
+@media (max-width: 400px) {
+    #hexGrid {
+        font-size: 13px;
+    }
 }
 </style>
