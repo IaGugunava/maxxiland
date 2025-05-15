@@ -19,7 +19,7 @@ const bannerMedia = (url: string) => {
         <div class="w-full h-full">
             <swiper-container
                 :slides-per-view="1"
-                
+                :autoplay="{ delay: 5000 }"
                 :loop="true"
             >
                 <swiper-slide v-for="item in bannersData" :key="item?.id">

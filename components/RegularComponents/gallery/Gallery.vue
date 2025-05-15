@@ -21,8 +21,6 @@ const galleriesMedia = (url: string) => {
   return $strapiMedia(url);
 };
 
-console.log(galleriesData.value);
-
 const swiperKey = ref(0);
 const show = ref(false);
 const index = ref(0)
@@ -77,7 +75,6 @@ onMounted(() => {
         modifier: 2,
         slideShadows: false,
       }"
-      :autoplay="{ delay: 3000 }"
       :modules="[EffectCoverflow]"
     >
       <SwiperSlide v-for="(item, index) in galleriesData" :key="item?.id" @click="openLightbox(index)">
@@ -93,6 +90,7 @@ onMounted(() => {
       :imgs="images"
       :index="index"
       @hide="show = false"
+      class="[&_img]:scale-200"
     >
       
     </vue-easy-lightbox>
