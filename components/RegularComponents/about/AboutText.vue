@@ -9,7 +9,7 @@ const aboutTextData = computed(() => (!error.value ? data?.value?.data?.filter((
     <div class="py-10">
         <div class="container border-t border-gray-800 pt-10 px-20">
             <h2 class="text-black text-3xl font-bold mb-4">{{ aboutTextData?.title }}</h2>
-            <TextComponent :text-value="aboutTextData?.description"/>
+            <CustomEditor :data="aboutTextData?.description"/>
         </div>
     </div>
 </template>
