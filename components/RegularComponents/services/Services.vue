@@ -14,7 +14,7 @@ const servicesMedia = (url: string) => {
 </script>
 
 <template>
-  <div class="py-20">
+  <div class="pt-20">
     <div v-if="servicesData?.length" class="container">
       <h2
         class="w-full text-dark text-3xl font-bold flex items-center justify-center text-center mb-8"
@@ -197,6 +197,10 @@ const servicesMedia = (url: string) => {
 @media (max-width: 400px) {
     #hexGrid {
         font-size: 13px;
+    }
+
+    .hexLink h3{
+      font-size: 16px;
     }
 }
 </style>
