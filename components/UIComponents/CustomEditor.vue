@@ -12,7 +12,7 @@ const htmlContent = computed(() => marked.parse(editorContent.value))
 <template>
   <div>
     <div
-      class="[&_p]:text-lg [&_p]:text-black [&_img]:my-8 [&_img]:h-full [&_img]:w-full [&_img]:object-cover [&_img]:aspect-[375/296] [&_img]:sm:aspect-[1920/540] [&_img]:rounded-xl"
+      class="[&_p]:text-lg [&_p]:text-dark [&_img]:my-8 [&_img]:h-full [&_img]:w-full [&_img]:object-cover [&_img]:aspect-[375/296] [&_img]:sm:aspect-[1920/540] [&_img]:rounded-xl"
       v-html="htmlContent"
     ></div>
   </div>

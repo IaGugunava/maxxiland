@@ -25,19 +25,19 @@ watch(
 
     <div class="hidden md:flex items-center gap-5">
       <NuxtLink
-        class="text-black text-lg font-semibold transition-all duration-300 ease-in-out"
+        class="text-dark text-lg font-semibold transition-all duration-300 ease-in-out"
         to="/about-us"
       >
         about us
       </NuxtLink>
       <NuxtLink
-        class="text-black text-lg font-semibold transition-all duration-300 ease-in-out"
+        class="text-dark text-lg font-semibold transition-all duration-300 ease-in-out"
         to="/services"
       >
         services
       </NuxtLink>
       <NuxtLink
-        class="text-black text-lg font-semibold transition-all duration-300 ease-in-out"
+        class="text-dark text-lg font-semibold transition-all duration-300 ease-in-out"
         to="/contact"
       >
         contact

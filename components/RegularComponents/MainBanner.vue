@@ -31,10 +31,10 @@ const bannerMedia = (url: string) => {
                              :src="bannerMedia(item?.image?.formats?.large?.url)"/>
                         </div>
                         <div class="absolute bottom-[50px] lg:bottom-[150px] xl:bottom-[250px] left-[50px] lg:left-[100px] 2xl:left-[150px]">
-                            <h1 class="text-white text-2xl lg:text-4xl font-bold mb-2 sm:mb-4">
+                            <h1 class="text-light text-2xl lg:text-4xl font-bold mb-2 sm:mb-4">
                                 {{ item?.title }}
                             </h1>
-                            <p class="text-white text-sm lg:text-lg max-w-full pr-[50px] sm:pr-0 sm:max-w-1/2 md:max-w-[700px] line-clamp-4 sm:line-clamp-6 xl:max-w-[1000px] mb-4 sm:mb-8">
+                            <p class="text-light text-sm lg:text-lg max-w-full pr-[50px] sm:pr-0 sm:max-w-1/2 md:max-w-[700px] line-clamp-4 sm:line-clamp-6 xl:max-w-[1000px] mb-4 sm:mb-8">
                                 {{ item?.description }}
                             </p>
     

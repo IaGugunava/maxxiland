@@ -7,8 +7,8 @@ const aboutTextData = computed(() => (!error.value ? data?.value?.data?.filter((
 
 <template>
     <div class="py-10">
-        <div class="container border-t border-gray-800 pt-10 px-20">
-            <h2 class="text-black text-3xl font-bold mb-4">{{ aboutTextData?.title }}</h2>
+        <div class="container border-t border-dark pt-10 px-20">
+            <h2 class="text-dark text-3xl font-bold mb-4">{{ aboutTextData?.title }}</h2>
             <CustomEditor :data="aboutTextData?.description"/>
         </div>
     </div>

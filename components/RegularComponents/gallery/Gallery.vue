@@ -40,7 +40,7 @@ onMounted(() => {
     <div class="container">
       <div class="mb-8">
         <h2
-          class="w-full text-black text-3xl font-bold flex items-center justify-center text-center"
+          class="w-full text-dark text-3xl font-bold flex items-center justify-center text-center"
         >
           gallery
         </h2>
