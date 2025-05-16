@@ -24,7 +24,6 @@ const servicesMedia = (url: string) => {
 
       <ul id="hexGrid">
         <li class="hex" v-for="item in servicesData" :key="item?.id">
-          <!-- {{ getSingleUrl('services', item?.name) }} -->
           <NuxtLink :to="getSingleUrl('services', item)" class="hexIn">
             <a class="hexLink" href="#">
               <NuxtImg :src="servicesMedia(item?.image?.formats?.large?.url)" />

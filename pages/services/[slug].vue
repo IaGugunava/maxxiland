@@ -1,17 +1,16 @@
 <script setup lang="ts">
 const route = useRoute()
-const id = route.params.slug.toString().split("-")?.[0]
+const id = route.params.slug.toString()?.split("-")?.[0]
 
-const { data, pending, error } = await apiFetch(`/api/services/${id}`);
+const { data, pending, error } = await apiFetch("/api/services?populate=*");
 
-console.log(data.value)
+const servicesData = computed(() => (!error.value ? data?.value?.data?.filter((el: any) => el.id.toString() === id)?.[0] : null));
+
 </script>
 
 <template>
     <div>
-        <h1>Service: {{ id }}</h1>
-        <p>This is the page for the "{{ id }}" service.</p>
-        <NuxtLink to="/services">← Back to all services</NuxtLink>
+        <ServicesInner :data="servicesData"/>
     </div>
 </template>
 
