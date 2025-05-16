@@ -1,5 +1,6 @@
 <script setup lang="ts">
 
+const route = useRoute();
 const isBurgerOpen = ref(false)
 
 watch(
@@ -12,6 +13,10 @@ watch(
     }
   }
 );
+
+watch(() => route.fullPath, () => {
+  isBurgerOpen.value = false;
+})
 </script>
 
 <template>

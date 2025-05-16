@@ -5,8 +5,8 @@ const props = defineProps<{
   data: any;
 }>();
 
-const editorContent = computed(() => props?.data)
-const htmlContent = computed(() => marked.parse(editorContent.value))
+const editorContent = computed(() => props?.data ? props?.data : null)
+const htmlContent = computed(() => editorContent.value ? marked.parse(editorContent.value) : null)
 </script>
 
 <template>
