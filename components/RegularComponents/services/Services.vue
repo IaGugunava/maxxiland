@@ -17,7 +17,7 @@ const servicesMedia = (url: string) => {
   <div class="py-20">
     <div v-if="servicesData?.length" class="container">
       <h2
-        class="w-full text-black text-3xl font-bold flex items-center justify-center text-center mb-8"
+        class="w-full text-dark text-3xl font-bold flex items-center justify-center text-center mb-8"
       >
         services
       </h2>
@@ -25,10 +25,10 @@ const servicesMedia = (url: string) => {
       <ul id="hexGrid">
         <li class="hex" v-for="item in servicesData" :key="item?.id">
           <NuxtLink :to="getSingleUrl('services', item)" class="hexIn">
-            <a class="hexLink" href="#">
+            <a class="hexLink text-light" href="#">
               <NuxtImg :src="servicesMedia(item?.image?.formats?.large?.url)" />
-              <h3>{{ item?.name }}</h3>
-              <p>{{ item?.short_description }}</p>
+              <h3 class="text-light bg-primary-opacity">{{ item?.name }}</h3>
+              <p class="text-light bg-primary-opacity">{{ item?.short_description }}</p>
             </a>
           </NuxtLink>
         </li>
@@ -81,7 +81,7 @@ const servicesMedia = (url: string) => {
     width: 100%;
     height: 100%;
     text-align: center;
-    color: #fff;
+    /* color: #fff; */
     overflow: hidden;
     -webkit-transform: skewY(-30deg) rotate3d(0,0,1,60deg);
         -ms-transform: skewY(-30deg) rotate3d(0,0,1,60deg);
@@ -105,7 +105,7 @@ const servicesMedia = (url: string) => {
   width: 100%;
   padding: 5%;
   box-sizing:border-box;
-  background-color: rgba(0, 128, 128, 0.8);
+  /* background-color: rgba(0, 128, 128, 0.8); */
   font-weight: 300;
   -webkit-transition:  -webkit-transform .2s ease-out, opacity .3s ease-out;
           transition:          transform .2s ease-out, opacity .3s ease-out;

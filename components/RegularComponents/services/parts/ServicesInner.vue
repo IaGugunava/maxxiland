@@ -16,7 +16,7 @@ const servicesMedia = (url: string) => {
     <div class="pb-20">
         <div class="image-container relative w-full h-full">
             <NuxtImg class="h-full w-full object-cover aspect-[375/296] sm:aspect-[1920/540]" :src="servicesMedia(data?.cover_image?.formats?.large?.url)"/>
-            <h1 class="absolute text-white text-3xl font-bold bottom-10 w-full left-0 z-10 flex justify-center items-center">{{ data?.name }}</h1>
+            <h1 class="absolute text-light text-3xl font-bold bottom-10 w-full left-0 z-10 flex justify-center items-center">{{ data?.name }}</h1>
         </div>
 
         <div class="container mt-10">

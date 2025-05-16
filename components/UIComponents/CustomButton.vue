@@ -1,9 +1,9 @@
 <script setup lang="ts">
 
 /**
- * @description BUTTON TYPE ONE: Button with violet background
+ * @description BUTTON TYPE ONE: Button with primary background
  * @description BUTTON TYPE TWO: Transparent button
- * @description BUTTON TYPE THREE: Transparent button with violet border and text
+ * @description BUTTON TYPE THREE: Transparent button with primary border and text
  */
 
 
@@ -26,9 +26,9 @@ withDefaults(
 <template>
     <button class="px-3 sm:px-6 py-3 rounded-lg cursor-pointer text-sm sm:text-lg font-semibold transition-all duration-300 ease-in-out"
     :class="{
-        'bg-black text-white': type === 1,
-        'border border-white font-semibold text-white': type === 2,
-        ' border border-black text-black hover:bg-black hover:text-white': type === 3
+        'bg-primary text-light hover:bg-primary-hover': type === 1,
+        'border border-light font-semibold text-light': type === 2,
+        ' border border-primary text-primary hover:bg-primary hover:text-light': type === 3
     }"
     >
         <div>
