@@ -9,6 +9,7 @@ export const apiFetch = (path, options = {}) => {
     const { apiUrl } = useConfigs();
   
     return useFetch(path, {
+        method: 'GET',
       baseURL: apiUrl,
       ...options
     });
