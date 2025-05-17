@@ -1,7 +1,7 @@
 <script setup lang="ts">
-const { data, pending, error } = await apiFetch("/api/social-medias?populate=*");
+const { data, pending, error } = await apiFetch("/api/socials?populate=*");
 
-const socials = computed(() => (!error.value ? data?.value?.data?.[0]?.social : null));
+const socials = computed(() => (!error.value ? data?.value?.data?.[0]?.media : null));
 
 </script>
 
