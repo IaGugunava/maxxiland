@@ -2,6 +2,6 @@
     <div>
         <TheHeader/>
             <slot/>
-        <!-- <the-footer/> -->
+        <TheFooter/>
     </div>
 </template>

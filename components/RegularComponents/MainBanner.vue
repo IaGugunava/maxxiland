@@ -25,7 +25,7 @@ function onAutoplayTimeLeft(swiper: any, time: any, progressRatio: any) {
 </script>
 
 <template>
-  <div class="relative h-full">
+  <div class="relative h-full overflow-x-hidden">
     <div class="w-full h-full">
       <Swiper
         :slides-per-view="1"
@@ -40,16 +40,17 @@ function onAutoplayTimeLeft(swiper: any, time: any, progressRatio: any) {
         <SwiperSlide v-for="item in bannersData" :key="item?.id">
           <div class="relative">
             <div class="h-full group w-full overflow-hidden">
+
               <NuxtImg
                 class="h-full w-full object-cover aspect-[375/296] sm:aspect-[1920/1000]"
-                :src="bannerMedia(item?.image?.formats?.large?.url)"
+                :src="bannerMedia(item?.image?.formats?.small?.url)"
               />
             </div>
             <div
               class="absolute bottom-[50px] lg:bottom-[150px] 2xl:bottom-[250px] left-[50px] lg:left-[100px] 2xl:left-[150px]"
             >
               <h1
-                class="text-light text-2xl xl:text-3xl lg:text-4xl font-bold mb-2 sm:mb-4"
+                class="text-light text-2xl xl:text-5xl lg:text-6xl font-bold mb-2 sm:mb-4"
               >
                 {{ item?.title }}
               </h1>
@@ -67,7 +68,7 @@ function onAutoplayTimeLeft(swiper: any, time: any, progressRatio: any) {
         </SwiperSlide>
       </Swiper>
 
-      <div class="absolute top-0 left-0 w-full h-1 bg-gray-300 z-10">
+      <div class="absolute top-0 left-0 w-full h-1 bg-gray-300 z-10" v-if="bannersData?.length > 1">
         <div
           class="h-full bg-primary transition-[width] duration-100"
           :style="{ width: `${progress * 100}%` }"

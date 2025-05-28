@@ -38,7 +38,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="pt-20 overflow-x-hidden">
+  <div class="pt-20 overflow-x-hidden" v-if="galleriesData?.length">
     <div class="container">
       <div class="mb-8">
         <h2

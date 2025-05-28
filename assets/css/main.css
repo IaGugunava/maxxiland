@@ -43,14 +43,27 @@
   --breakpoint-xl: 1536px;
   --breakpoint-2xl: 1920px;
 
-  --color-background: #edf2f5;
+  --color-background: #f0f7fc;
   --color-light: #f0f7fc;
   --color-dark: #0c0c0d;
-  --color-primary: #4badf2;
-  --color-secondary: #7ec8fc;
-  --color-primary-hover: #0596fc;
+  --color-secondary: #4badf2;
+  
+  --color-primary: #4235f2;
+  --color-purple: #a172d0;
+  --color-green: #a9de6e;
+  --color-orange: #eb8837;
+  --color-yellow: #e5ce4a;
+  --color-primary-hover: #3c84e2;
   --color-primary-opacity: rgba(75, 173, 242, 0.5)
 
+  /*
+    #4235f2 blue
+    #3c84e2 light blue
+    #a172d0 purple
+    #a9de6e green
+    #eb8837 orange
+    #e5ce4a yellow
+  */
 }
 
 /* variables */
