@@ -26,7 +26,7 @@ const servicesMedia = (url: string) => {
         <li class="hex" v-for="item in servicesData" :key="item?.id">
           <NuxtLink :to="getSingleUrl('services', item)" class="hexIn">
             <a class="hexLink text-light" href="#">
-              <NuxtImg :src="servicesMedia(item?.image?.formats?.large?.url)" />
+              <NuxtImg :src="servicesMedia(item?.image?.formats?.small?.url)" />
               <h3 class="text-light bg-primary-opacity">{{ item?.name }}</h3>
               <p class="text-light bg-primary-opacity">{{ item?.short_description }}</p>
             </a>
@@ -103,7 +103,7 @@ const servicesMedia = (url: string) => {
 
 .hex h3, .hex p {
   width: 100%;
-  padding: 5%;
+  padding: 8%;
   box-sizing:border-box;
   /* background-color: rgba(0, 128, 128, 0.8); */
   font-weight: 300;

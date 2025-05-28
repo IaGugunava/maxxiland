@@ -23,26 +23,26 @@ watch(() => route.fullPath, () => {
   <div class="flex justify-between items-center p-5 relative z-20">
     <NuxtLink
       to="/"
-      class="w-[100px] h-[50px] bg-white flex items-center justify-center"
+      class="w-[100px] h-[50px] flex items-center justify-center"
     >
-      <img src="../../../assets/images/logo-green-black.png" />
+      <img src="../../../assets/images/logo-header.png" />
     </NuxtLink>
 
     <div class="hidden md:flex items-center gap-5">
       <NuxtLink
-        class="text-dark text-lg font-semibold transition-all duration-300 ease-in-out"
+        class="text-dark text-lg font-semibold transition-all duration-300 ease-in-out hover:text-primary-hover"
         to="/about-us"
       >
         about us
       </NuxtLink>
       <NuxtLink
-        class="text-dark text-lg font-semibold transition-all duration-300 ease-in-out"
+        class="text-dark text-lg font-semibold transition-all duration-300 ease-in-out hover:text-primary-hover"
         to="/services"
       >
         services
       </NuxtLink>
       <NuxtLink
-        class="text-dark text-lg font-semibold transition-all duration-300 ease-in-out"
+        class="text-dark text-lg font-semibold transition-all duration-300 ease-in-out hover:text-primary-hover"
         to="/contact"
       >
         contact
@@ -77,4 +77,8 @@ watch(() => route.fullPath, () => {
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.router-link-active{
+  color: #4235f2;
+}
+</style>
