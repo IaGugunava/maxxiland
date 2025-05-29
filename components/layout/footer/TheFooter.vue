@@ -10,8 +10,8 @@ const footerContactInfo = computed(() =>
 
 <template>
   <footer class="mt-20 bg-secondary">
-    <div class="container py-10 flex gap-10">
-      <div class="flex flex-col gap-6 w-1/3">
+    <div class="container py-10 flex flex-col md:flex-row gap-10">
+      <div class="flex flex-col gap-6 w-full md:w-1/3">
         <NuxtLink
           to="/"
           class="max-w-[100px] max-h-[100px] flex items-center justify-center"
@@ -29,7 +29,7 @@ const footerContactInfo = computed(() =>
         </div>
 
     </div>
-    <div class="w-1/3 flex flex-col items-center">
+    <div class="w-full md:w-1/3 flex flex-col items-center">
         <h2 class="text-light text-lg font-semibold mb-7">links</h2>
         <div class="flex flex-col gap-5">
             <NuxtLink
@@ -52,7 +52,7 @@ const footerContactInfo = computed(() =>
             </NuxtLink>
         </div>
     </div>
-    <div class="w-1/3">
+    <div class="w-full md:w-1/3">
         <h2 class="text-light text-lg font-semibold mb-5">contact us</h2>
         <div class="flex flex-col gap-4 mb-5">
             <div  v-for="item in footerContactInfo" :key="item?.id">

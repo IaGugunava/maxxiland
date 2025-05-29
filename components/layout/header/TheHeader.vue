@@ -20,7 +20,7 @@ watch(() => route.fullPath, () => {
 </script>
 
 <template>
-  <div class="flex justify-between items-center p-5 relative z-20">
+  <div class="flex justify-between items-center p-5 relative z-20 transition-all duration-300 ease-in-out" :class="{'bg-background': isBurgerOpen, 'bg-transparent': !isBurgerOpen}">
     <NuxtLink
       to="/"
       class="w-[100px] h-[50px] flex items-center justify-center"
