@@ -11,6 +11,7 @@ import Services from '~/components/RegularComponents/services/Services.vue';
         <Services/>
         <Gallery/>
         <AboutUsMain/>
+        <SalesSlider/>
     </div>
 </template>
 

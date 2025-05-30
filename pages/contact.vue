@@ -15,23 +15,23 @@ const contactMedia = (url: string) => {
 </script>
 
 <template>
-  <div class="py-20">
+  <div class="py-10 md:py-20">
     <div class="container">
-      <h1 class="w-full text-black text-3xl font-bold mb-6">Contact us</h1>
+      <h1 class="w-full text-black text-2xl md:text-3xl font-bold mb-6">Contact us</h1>
       <div class="flex flex-col md:flex-row gap-6 sm:gap-10">
         <div class="w-full md:w-1/2">
-          <p class="text-lg mb-6" v-html="contactInfoData?.description"></p>
+          <p class="text-sm sm:text-lg mb-6" v-html="contactInfoData?.description"></p>
           <ContactList
             :socials="contactInfoData?.socials"
             :info="contactInfoData?.contactLinks"
           />
         </div>
-        <div class="w-full md:w-1/2">
+        <NuxtLink :to="contactInfoData?.contactLinks?.[0]?.url" class="w-full md:w-1/2">
           <NuxtImg
             class="h-full w-full object-cover aspect-[375/296] sm:aspect-[1920/1000]"
             :src="contactMedia(contactInfoData?.image?.formats?.large?.url)"
           />
-        </div>
+        </NuxtLink>
       </div>
     </div>
   </div>

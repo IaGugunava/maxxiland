@@ -47,6 +47,7 @@
   --color-light: #f0f7fc;
   --color-dark: #0c0c0d;
   --color-secondary: #4badf2;
+  --color-red-error: #ad0a15;
   
   --color-primary: #4235f2;
   --color-purple: #a172d0;
@@ -54,7 +55,13 @@
   --color-orange: #eb8837;
   --color-yellow: #e5ce4a;
   --color-primary-hover: #3c84e2;
-  --color-primary-opacity: rgba(75, 173, 242, 0.5)
+  --color-primary-opacity: rgba(66, 53, 242, 0.5);
+  --color-purple-opacity: rgba(161, 114, 208, 0.5);
+  --color-green-opacity: rgba(169, 222, 110, 0.5);
+  --color-orange-opacity: rgba(235, 136, 55, 0.5);
+  --color-yellow-opacity: rgba(229, 206, 74, 0.5);
+  --color-primary-hover-opacity: rgba(60, 132, 226, 0.5);
+
 
   /*
     #4235f2 blue

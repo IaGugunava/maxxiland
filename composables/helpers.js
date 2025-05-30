@@ -17,6 +17,6 @@ export const apiFetch = (path, options = {}) => {
 
 export const getSingleUrl = (path, item) => {
     const id = item?.id;
-    const slug = item?.name.toLowerCase().split(" ").join("-");
+    const slug = item?.slug.toLowerCase().split(" ").join("-");
     return `/${path}/${id}-${slug}`
 }

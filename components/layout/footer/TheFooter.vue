@@ -33,19 +33,25 @@ const footerContactInfo = computed(() =>
         <h2 class="text-light text-lg font-semibold mb-7">links</h2>
         <div class="flex flex-col gap-5">
             <NuxtLink
-                class="text-light text-lg font-semibold transition-all duration-300 ease-in-out"
+                class="text-light text-lg font-semibold text-center transition-all duration-300 ease-in-out"
                 to="/about-us"
             >
                 about us
             </NuxtLink>
             <NuxtLink
-                class="text-light text-lg font-semibold transition-all duration-300 ease-in-out"
+                class="text-light text-lg font-semibold text-center transition-all duration-300 ease-in-out"
                 to="/services"
             >
                 services
             </NuxtLink>
             <NuxtLink
-                class="text-light text-lg font-semibold transition-all duration-300 ease-in-out"
+                class="text-light text-lg font-semibold text-center transition-all duration-300 ease-in-out"
+                to="/sales"
+            >
+                sales
+            </NuxtLink>
+            <NuxtLink
+                class="text-light text-lg font-semibold text-center transition-all duration-300 ease-in-out"
                 to="/contact"
             >
                 contact

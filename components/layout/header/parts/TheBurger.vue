@@ -15,12 +15,19 @@
         >
         services
       </NuxtLink>
+      <NuxtLink
+          class="text-dark text-lg font-semibold w-full border-b border-dark flex justify-center items-center pb-5"
+          to="/sales"
+        >
+          sales
+        </NuxtLink>
         <NuxtLink
           class="text-dark text-lg font-semibold w-full border-b border-dark flex justify-center items-center pb-5"
           to="/contact"
         >
           contact
         </NuxtLink>
+        
     </div>
 
     <div class="absolute bottom-[150px] flex-col z-30 left-5 flex gap-4 items-start">

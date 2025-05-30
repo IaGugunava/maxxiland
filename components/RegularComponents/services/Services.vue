@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { getSingleUrl } from '#imports';
+const route = useRoute();
 const { data, pending, error } = await apiFetch("/api/services?populate=*");
 
 const servicesData = computed(() => (!error.value ? data?.value?.data : null));
@@ -10,17 +11,22 @@ const servicesMedia = (url: string) => {
   return $strapiMedia(url);
 };
 
+const showButton = computed(() => route?.fullPath?.includes('services'))
 
 </script>
 
 <template>
-  <div class="pt-20">
+  <div class="pt-20 pb-5 md:pb-20">
     <div v-if="servicesData?.length" class="container">
       <h2
-        class="w-full text-dark text-3xl font-bold flex items-center justify-center text-center mb-8"
+        class="text-dark text-3xl font-bold flex items-start justify-start mb-4"
       >
         services
       </h2>
+
+      <p class="text-dark text-lg mb-8">
+        We offer these services
+      </p>
 
       <ul id="hexGrid">
         <li class="hex" v-for="item in servicesData" :key="item?.id">
@@ -33,6 +39,10 @@ const servicesMedia = (url: string) => {
           </NuxtLink>
         </li>
       </ul>
+
+      <NuxtLink v-if="!showButton" to="/services" class="mt-8 md:mt-20 flex w-full items-center justify-center">
+        <CustomButton text="view details" color="green" :type="3"/>
+      </NuxtLink>
     </div>
   </div>
 </template>
@@ -225,7 +235,7 @@ const servicesMedia = (url: string) => {
     }
 
     .hexLink h3{
-      font-size: 12px;
+      font-size: 16px;
     }
 }
 </style>
