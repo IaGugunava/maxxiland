@@ -23,7 +23,7 @@ watch(() => route.fullPath, () => {
   <div class="flex justify-between items-center p-5 relative z-20 transition-all duration-300 ease-in-out" :class="{'bg-background': isBurgerOpen, 'bg-transparent': !isBurgerOpen}">
     <NuxtLink
       to="/"
-      class="w-[100px] h-[50px] flex items-center justify-center"
+      class="w-[150px] h-[50px] flex items-center justify-center"
     >
       <img src="../../../assets/images/logo-header.png" />
     </NuxtLink>
@@ -43,6 +43,12 @@ watch(() => route.fullPath, () => {
       </NuxtLink>
       <NuxtLink
         class="text-dark text-lg font-semibold transition-all duration-300 ease-in-out hover:text-primary-hover"
+        to="/sales"
+      >
+        sales
+      </NuxtLink>
+      <NuxtLink
+        class="text-dark text-lg font-semibold transition-all duration-300 ease-in-out hover:text-primary-hover"
         to="/contact"
       >
         contact
@@ -56,15 +62,15 @@ watch(() => route.fullPath, () => {
       >
         <div
           :class="{ 'translate-y-2.5 rotate-45': isBurgerOpen }"
-          class="h-1 w-8 rounded-full bg-black transition-transform"
+          class="h-1 w-8 rounded-full bg-primary transition-transform"
         ></div>
         <div
           :class="{ 'scale-x-0': isBurgerOpen }"
-          class="h-1 w-8 rounded-full bg-black transition-transform"
+          class="h-1 w-8 rounded-full bg-purple transition-transform"
         ></div>
         <div
           :class="{ '-translate-y-2.5 -rotate-45': isBurgerOpen }"
-          class="h-1 w-8 rounded-full bg-black transition-transform"
+          class="h-1 w-8 rounded-full bg-green transition-transform"
         ></div>
       </div>
     </div>
