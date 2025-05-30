@@ -113,7 +113,7 @@ const servicesMedia = (url: string) => {
 .hex h3 {
   bottom: 50%;
   padding-top:50%;
-  font-size: 1.5em;
+  font-size: 18px;
   z-index: 1;
   -webkit-transform:translate3d(0,-100%,0);
       -ms-transform:translate3d(0,-100%,0);
@@ -140,6 +140,13 @@ const servicesMedia = (url: string) => {
 /*** HOVER EFFECT  **********************************************************************/
 .hexLink:hover h3, .hexLink:focus h3,
 .hexLink:hover p, .hexLink:focus p{
+  -webkit-transform:translate3d(0,0,0);
+      -ms-transform:translate3d(0,0,0);
+          transform:translate3d(0,0,0);
+}
+
+.hexLink:active h3, .hexLink:focus h3,
+.hexLink:active p, .hexLink:focus p{
   -webkit-transform:translate3d(0,0,0);
       -ms-transform:translate3d(0,0,0);
           transform:translate3d(0,0,0);
@@ -192,6 +199,24 @@ const servicesMedia = (url: string) => {
   .hex:nth-child(3n+3){ /* first hexagon of even rows */
     margin-left:25%;  /* = width of .hex / 2  to indent even rows */
   }
+  .hexLink h3{
+    font-size: 12px;
+    /* -webkit-transform:translate3d(0,0,0);
+      -ms-transform:translate3d(0,0,0);
+          transform:translate3d(0,0,0); */
+          transform: unset;
+          height: 100%;
+          bottom: 0;
+          display: flex;
+          padding: 0;
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+  }
+
+  .hex p{
+    display: none;
+  }
 }
 
 @media (max-width: 400px) {
@@ -200,7 +225,7 @@ const servicesMedia = (url: string) => {
     }
 
     .hexLink h3{
-      font-size: 16px;
+      font-size: 12px;
     }
 }
 </style>

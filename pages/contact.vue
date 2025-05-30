@@ -18,7 +18,7 @@ const contactMedia = (url: string) => {
   <div class="py-20">
     <div class="container">
       <h1 class="w-full text-black text-3xl font-bold mb-6">Contact us</h1>
-      <div class="flex flex-col md:flex-row gap-10">
+      <div class="flex flex-col md:flex-row gap-6 sm:gap-10">
         <div class="w-full md:w-1/2">
           <p class="text-lg mb-6" v-html="contactInfoData?.description"></p>
           <ContactList

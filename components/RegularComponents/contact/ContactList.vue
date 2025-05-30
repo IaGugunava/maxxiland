@@ -6,7 +6,7 @@ defineProps<{
 </script>
 
 <template>
-    <div class="flex flex-col justify-around h-full">
+    <div class="flex flex-col gap-4 sm:gap-0 justify-start sm:justify-around h-full">
         <div class="flex flex-col gap-4">
             <div  v-for="item in info" :key="item?.id">
                 <NuxtLink class="flex gap-2 items-center" :to="item?.url" target="_blank">

@@ -3,30 +3,24 @@
 <template>
   <div class="w-full h-[100dvh] z-10 fixed top-[90px] left-0 bg-background">
     <div class="flex gap-5 flex-col justify-center items-center">
-      <div class="w-full border-b border-dark flex justify-center items-center pb-5">
         <NuxtLink
-          class="text-dark text-lg font-semibold"
+          class="text-dark text-lg font-semibold w-full border-b border-dark flex justify-center items-center pb-5"
           to="/about-us"
         >
           about us
         </NuxtLink>
-      </div>
-      <div class="w-full border-b border-dark flex justify-center items-center pb-5">
         <NuxtLink
-          class="text-dark text-lg font-semibold"
+          class="text-dark text-lg font-semibold w-full border-b border-dark flex justify-center items-center pb-5"
           to="/services"
         >
         services
       </NuxtLink>
-      </div>
-      <div class="w-full border-b border-dark flex justify-center items-center pb-5">
         <NuxtLink
-          class="text-dark text-lg font-semibold"
+          class="text-dark text-lg font-semibold w-full border-b border-dark flex justify-center items-center pb-5"
           to="/contact"
         >
           contact
         </NuxtLink>
-      </div>
     </div>
 
     <div class="absolute bottom-[150px] flex-col z-30 left-5 flex gap-4 items-start">
