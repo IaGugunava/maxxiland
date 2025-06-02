@@ -12,7 +12,7 @@ defineProps<{
     <div class="flex flex-col gap-4">
       <div v-for="item in info" :key="item?.id">
         <NuxtLink
-          class="flex gap-2 items-center group"
+          class="flex gap-2 w-fit items-center group"
           :to="item?.url"
           target="_blank"
         >

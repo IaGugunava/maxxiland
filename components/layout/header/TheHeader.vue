@@ -33,25 +33,25 @@ watch(() => route.fullPath, () => {
         class="text-dark text-lg font-semibold transition-all duration-300 ease-in-out hover:text-primary-hover"
         to="/about-us"
       >
-        about us
+        ჩვენ შესახებ
       </NuxtLink>
       <NuxtLink
         class="text-dark text-lg font-semibold transition-all duration-300 ease-in-out hover:text-primary-hover"
         to="/services"
       >
-        services
+        სერვისები
       </NuxtLink>
       <NuxtLink
         class="text-dark text-lg font-semibold transition-all duration-300 ease-in-out hover:text-primary-hover"
         to="/sales"
       >
-        sales
+        ფასდაკლებები
       </NuxtLink>
       <NuxtLink
         class="text-dark text-lg font-semibold transition-all duration-300 ease-in-out hover:text-primary-hover"
         to="/contact"
       >
-        contact
+        კონტაქტი
       </NuxtLink>
     </div>
 
