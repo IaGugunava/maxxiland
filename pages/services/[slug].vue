@@ -6,6 +6,10 @@ const { data, pending, error } = await apiFetch("/api/services?populate=*");
 
 const servicesData = computed(() => (!error.value ? data?.value?.data?.filter((el: any) => el.id.toString() === id)?.[0] : null));
 
+if(!servicesData?.value){
+    throw createError({ statusCode: 404, statusMessage: 'Service not found' })
+}
+
 </script>
 
 <template>
