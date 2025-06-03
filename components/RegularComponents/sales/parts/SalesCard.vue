@@ -13,7 +13,7 @@ const shopsMedia = (url: string) => {
 };
 
 const reducedPrice = computed(
-  () => (props.data?.price * props.data?.sale) / 100
+  () => props.data?.price - (props.data?.price * props.data?.sale) / 100
 );
 
 const start = computed(() => format(props.data?.startDate, 'dd MMMM yyyy'));

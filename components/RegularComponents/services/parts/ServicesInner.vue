@@ -21,7 +21,7 @@ const servicesMedia = (url: string) => {
 
         <div class="container mt-10">
             <NuxtLink to="/services">
-                <CustomButton class="mb-5" text="all services" :type="1" color="green"/>
+                <CustomButton class="mb-5" text="ყველა სერვისი" :type="1" color="green"/>
             </NuxtLink>
 
             <CustomEditor v-if="data?.description" :data="data?.description"/>
