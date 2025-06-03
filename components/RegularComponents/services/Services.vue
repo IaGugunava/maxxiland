@@ -21,11 +21,11 @@ const showButton = computed(() => route?.fullPath?.includes('services'))
       <h2
         class="text-dark text-3xl font-bold flex items-start justify-start mb-4"
       >
-        services
+        სერვისები
       </h2>
 
       <p class="text-dark text-lg mb-8">
-        We offer these services
+        ჩვენ ამ სერვისებს გთავაზობთ
       </p>
 
       <ul id="hexGrid">
@@ -41,7 +41,7 @@ const showButton = computed(() => route?.fullPath?.includes('services'))
       </ul>
 
       <NuxtLink v-if="!showButton" to="/services" class="mt-8 md:mt-20 flex w-full items-center justify-center">
-        <CustomButton text="view details" color="green" :type="3"/>
+        <CustomButton text="დეტალურად" color="green" :type="3"/>
       </NuxtLink>
     </div>
   </div>
@@ -187,6 +187,23 @@ const showButton = computed(() => route?.fullPath?.includes('services'))
   }
 }
 
+@media (max-width: 1024px){
+  .hexLink h3{
+    font-size: 12px;
+    /* -webkit-transform:translate3d(0,0,0);
+      -ms-transform:translate3d(0,0,0);
+          transform:translate3d(0,0,0); */
+          transform: unset;
+          height: 100%;
+          bottom: 0;
+          display: flex;
+          padding: 0;
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+  }
+}
+
 @media (max-width: 900px) and (min-width:601px) { /* <- 3-2  hexagons per row */
   #hexGrid{
     padding-bottom: 7.4%
@@ -209,20 +226,7 @@ const showButton = computed(() => route?.fullPath?.includes('services'))
   .hex:nth-child(3n+3){ /* first hexagon of even rows */
     margin-left:25%;  /* = width of .hex / 2  to indent even rows */
   }
-  .hexLink h3{
-    font-size: 12px;
-    /* -webkit-transform:translate3d(0,0,0);
-      -ms-transform:translate3d(0,0,0);
-          transform:translate3d(0,0,0); */
-          transform: unset;
-          height: 100%;
-          bottom: 0;
-          display: flex;
-          padding: 0;
-          width: 100%;
-          justify-content: center;
-          align-items: center;
-  }
+  
 
   .hex p{
     display: none;

@@ -44,7 +44,7 @@ onMounted(() => {
         <h2
           class="w-full text-dark text-3xl font-bold flex items-center justify-center text-center"
         >
-          gallery
+          ფოტო გალერეა
         </h2>
       </div>
     </div>

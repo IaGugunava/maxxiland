@@ -17,7 +17,7 @@ const contactMedia = (url: string) => {
 <template>
   <div class="py-10 md:py-20">
     <div class="container">
-      <h1 class="w-full text-black text-2xl md:text-3xl font-bold mb-6">Contact us</h1>
+      <h1 class="w-full text-black text-2xl md:text-3xl font-bold mb-6">{{ contactInfoData?.title }}</h1>
       <div class="flex flex-col md:flex-row gap-6 sm:gap-10">
         <div class="w-full md:w-1/2">
           <p class="text-sm sm:text-lg mb-6" v-html="contactInfoData?.description"></p>

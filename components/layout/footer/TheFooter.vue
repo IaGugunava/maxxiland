@@ -30,36 +30,36 @@ const footerContactInfo = computed(() =>
 
     </div>
     <div class="w-full md:w-1/3 flex flex-col items-center">
-        <h2 class="text-light text-lg font-semibold mb-7">links</h2>
+        <h2 class="text-light text-lg font-semibold mb-7">ლინკები</h2>
         <div class="flex flex-col gap-5">
             <NuxtLink
-                class="text-light text-lg font-semibold text-center transition-all duration-300 ease-in-out"
+                class="relative text-light text-lg font-semibold text-center transition-all duration-300 ease-in-out after:content-[''] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-light after:transition-all after:duration-300 hover:after:w-full"
                 to="/about-us"
             >
-                about us
+                ჩვენ შესახებ
             </NuxtLink>
             <NuxtLink
-                class="text-light text-lg font-semibold text-center transition-all duration-300 ease-in-out"
+                class="relative text-light text-lg font-semibold text-center transition-all duration-300 ease-in-out after:content-[''] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-light after:transition-all after:duration-300 hover:after:w-full"
                 to="/services"
             >
-                services
+                სერვისები
             </NuxtLink>
             <NuxtLink
-                class="text-light text-lg font-semibold text-center transition-all duration-300 ease-in-out"
+                class="relative text-light text-lg font-semibold text-center transition-all duration-300 ease-in-out after:content-[''] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-light after:transition-all after:duration-300 hover:after:w-full"
                 to="/sales"
             >
-                sales
+                ფასდაკლებები
             </NuxtLink>
             <NuxtLink
-                class="text-light text-lg font-semibold text-center transition-all duration-300 ease-in-out"
+                class="relative text-light text-lg font-semibold text-center transition-all duration-300 ease-in-out after:content-[''] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-light after:transition-all after:duration-300 hover:after:w-full"
                 to="/contact"
             >
-                contact
+                კონტაქტი
             </NuxtLink>
         </div>
     </div>
     <div class="w-full md:w-1/3">
-        <h2 class="text-light text-lg font-semibold mb-5">contact us</h2>
+        <h2 class="text-light text-lg font-semibold mb-5">დაგვიკავშირდით</h2>
         <div class="flex flex-col gap-4 mb-5">
             <div  v-for="item in footerContactInfo" :key="item?.id">
                 <NuxtLink class="flex gap-2 items-center" :to="item?.url" target="_blank">

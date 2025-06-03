@@ -1,7 +1,11 @@
 <script setup lang="ts">
 defineProps<{
-  error: any
-}>();
+  error: {
+    statusCode: number
+    statusMessage?: string
+    message?: string
+  }
+}>()
 </script>
 
 <template>

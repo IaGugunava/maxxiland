@@ -32,7 +32,7 @@ const mainBannerMedia = (url: string) => {
           to="about-us"
           class="w-fit flex justify-start lg:justify-end"
         >
-          <CustomButton text="show more" class="w-fit" :type="3" color="purple"/>
+          <CustomButton text="გაიგე მეტი" class="w-fit" :type="3" color="purple"/>
         </NuxtLink>
       </div>
 
