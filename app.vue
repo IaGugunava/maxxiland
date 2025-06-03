@@ -1,5 +1,5 @@
 <script lang="ts">
-const layout = "custom";
+const layout = "default";
 </script>
 
 <template>
