@@ -50,12 +50,12 @@ function onAutoplayTimeLeft(swiper: any, time: any, progressRatio: any) {
               class="absolute bottom-[50px] lg:bottom-[150px] left-[50px] lg:left-[100px] 2xl:left-[150px]"
             >
               <h1
-                class="text-secondary text-[34px] md:text-[56px] xl:text-[64px] 2xl:text-[80px] lg:text-6xl font-bold mb-2 md:mb-4"
+                class="text-light text-[34px] md:text-[56px] xl:text-[64px] 2xl:text-[80px] lg:text-6xl font-bold mb-2 md:mb-4"
               >
                 {{ item?.title }}
               </h1>
               <p
-                class="text-secondary text-sm lg:text-lg max-w-full pr-[50px] sm:pr-0 sm:max-w-1/2 md:max-w-[700px] line-clamp-4 sm:line-clamp-6 xl:max-w-[1000px] mb-4 sm:mb-8"
+                class="text-light text-sm lg:text-lg max-w-full pr-[50px] sm:pr-0 sm:max-w-1/2 md:max-w-[700px] line-clamp-4 sm:line-clamp-6 xl:max-w-[1000px] mb-4 sm:mb-8"
               >
                 {{ item?.description }}
               </p>
