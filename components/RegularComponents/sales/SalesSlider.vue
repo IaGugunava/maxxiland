@@ -7,8 +7,9 @@ const { data, pending, error } = await apiFetch("/api/shops?populate=*");
 
 const shopsData = computed(() => (!error.value ? data?.value?.data : null));
 
-const checkDateViability = (start: string, finish: string) => {
-  if(Date.now() >= Date.parse(start) || Date.now() <= Date.parse(finish)){
+const checkDateViability = (item: any) => {
+  if(!item?.price || !item?.ssale) return true;
+  if(Date.now() >= Date.parse(item?.startDate) || Date.now() <= Date.parse(item?.finishDate)){
     return true;
   }
 
@@ -21,10 +22,10 @@ const checkDateViability = (start: string, finish: string) => {
     <div class="mt-20 overflow-x-hidden">
         <div class="container">
             <div class="mb-8 flex flex-col sm:flex-row w-full justify-between gap-4 sm:gap-0 items-start sm:items-center">
-                <h2 class="shrink text-dark text-xl sm:text-2xl md:text-3xl font-bold">Check out our sales</h2>
+                <h2 class="shrink text-dark text-xl sm:text-2xl md:text-3xl font-bold">სიახლეები და ფასდაკლებები</h2>
 
                 <NuxtLink to="/sales">
-                  <CustomButton text="explore more options" :type="3" color="orange"/>
+                  <CustomButton text="აღმოაჩინე მეტი" :type="3" color="orange"/>
                 </NuxtLink>
             </div>
         </div>
@@ -72,8 +73,8 @@ const checkDateViability = (start: string, finish: string) => {
       }"
       :speed="1000"
     >
-      <SwiperSlide v-show="checkDateViability(item?.startDate, item?.finishDate)" v-for="item in shopsData" :key="item?.id">
-          <SalesCard :data="item" />
+      <SwiperSlide v-show="checkDateViability(item)" v-for="item in shopsData" :key="item?.id">
+          <SalesCard :data="item" :is-sales="item?.sale || item?.price" />
       </SwiperSlide>
     </Swiper>
     </div>
