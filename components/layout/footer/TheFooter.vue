@@ -71,6 +71,10 @@ const footerContactInfo = computed(() =>
         <Socials :is-light="true"/>
     </div>
     </div>
+
+    <div class="flex justify-center items-center w-full border-t border-light text-light py-5">
+      <p>© 2025 მაქსილენდი</p>
+    </div>
   </footer>
 </template>
 
