@@ -15,8 +15,8 @@ const salesMedia = (url: string) => {
 <template>
     <div class="pb-20">
         <div class="image-container relative w-full h-full">
-            <NuxtImg class="h-full w-full object-cover" :src="salesMedia(data?.cover_image?.formats?.small?.url)"/>
-            <h1 class="absolute text-light text-3xl font-bold bottom-10 w-full left-5 md:left-0 z-10 flex justify-center items-center">{{ data?.name }}</h1>
+            <NuxtImg class="h-full w-full object-cover aspect-[375/296] sm:aspect-[768/472] md:aspect-[1920/540]" :src="salesMedia(data?.cover_image?.formats?.small?.url)"/>
+            <h1 class="absolute text-light text-3xl font-bold bottom-10 w-full left-5 md:left-0 z-10 flex justify-center items-center">{{ data?.title }}</h1>
         </div>
 
         <div class="container mt-10">
