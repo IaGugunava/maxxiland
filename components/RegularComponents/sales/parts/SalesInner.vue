@@ -21,7 +21,7 @@ const salesMedia = (url: string) => {
 
         <div class="container mt-10">
             <NuxtLink to="/sales">
-                <CustomButton class="mb-5" text="all sales" :type="3" color="orange"/>
+                <CustomButton class="mb-5" text="იხილეთ ყველა" :type="3" color="orange"/>
             </NuxtLink>
 
             <CustomEditor v-if="data?.description" :data="data?.description"/>
