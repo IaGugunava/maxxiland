@@ -12,6 +12,7 @@
   "dependencies": {
     "@nuxt/image": "^1.10.0",
     "@nuxt/ui": "^3.1.1",
+    "@nuxtjs/sitemap": "^7.3.1",
     "@tailwindcss/vite": "^4.1.5",
     "date-fns": "^4.1.0",
     "fslightbox-vue": "^2.2.1",
