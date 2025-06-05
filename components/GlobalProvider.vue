@@ -10,6 +10,15 @@ const imageUrl = (url: string) => {
   return $strapiMedia(url);
 };
 
+useHead({
+  htmlAttrs: {
+    lang: 'ge'
+  },
+  meta: [
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+  ]
+})
+
 watch(() => route?.fullPath, () => {
 
     const pageSeoData = data?.value?.data?.filter((el: any) => el.name === route?.name)?.[0]?.seo
