@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { getSingleUrl } from "#imports";
-import { format } from "date-fns"
+
 
 const props = defineProps<{
   data: any;
@@ -18,7 +18,7 @@ const reducedPrice = computed(
 );
 
 // const start = computed(() => format(props.data?.startDate, 'dd MMMM yyyy'));
-const finish = computed(() => format(props.data?.finishDate, 'dd MMMM yyyy'))
+const finish = computed(() => formatDate(props.data?.finishDate, 'dd MMMM yyyy'))
 
 </script>
 
@@ -52,8 +52,8 @@ const finish = computed(() => format(props.data?.finishDate, 'dd MMMM yyyy'))
     </div>
 
     <div>
-      <p v-if="isSales">hurry, only until {{ finish }}</p>
-      <p v-else v-html="data?.description" class="line-clamp-3"></p>
+      <p v-if="isSales">იჩქარეთ, აქცია მოქმედება {{ finish }}-მდე</p>
+      <p v-else class="line-clamp-3">{{ data?.short_description }}</p>
     </div>
   </NuxtLink>
 </template>
