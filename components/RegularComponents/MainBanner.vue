@@ -22,6 +22,7 @@ const progress = ref(1);
 function onAutoplayTimeLeft(swiper: any, time: any, progressRatio: any) {
   progress.value = 1 - progressRatio; // because it starts from 1 and goes to 0
 }
+
 </script>
 
 <template>

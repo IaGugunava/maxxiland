@@ -8,7 +8,7 @@ const { data, pending, error } = await apiFetch("/api/shops?populate=*");
 const shopsData = computed(() => (!error.value ? data?.value?.data : null));
 
 const checkDateViability = (item: any) => {
-  if(!item?.price || !item?.ssale) return true;
+  if(!item?.price || !item?.sale) return true;
   if(Date.now() >= Date.parse(item?.startDate) || Date.now() <= Date.parse(item?.finishDate)){
     return true;
   }
@@ -20,7 +20,7 @@ const checkDateViability = (item: any) => {
 
 <template>
     <div class="mt-20 overflow-x-hidden">
-        <div class="container">
+        <div v-if="shopsData" class="container">
             <div class="mb-8 flex flex-col sm:flex-row w-full justify-between gap-4 sm:gap-0 items-start sm:items-center">
                 <h2 class="shrink text-dark text-xl sm:text-2xl md:text-3xl font-bold">სიახლეები და ფასდაკლებები</h2>
 

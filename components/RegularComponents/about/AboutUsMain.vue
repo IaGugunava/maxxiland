@@ -17,6 +17,7 @@ const mainBannerMedia = (url: string) => {
 <template>
   <div class="py-20">
     <div
+      v-if="mainBannerData"
       class="container flex items-center flex-col lg:flex-row justify-center gap-10 lg:gap-20"
     >
       <div class="w-full lg:w-1/2 flex justify-end items-start lg:items-end flex-col gap-4">
