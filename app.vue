@@ -6,7 +6,7 @@ import GlobalProvider from '~/components/GlobalProvider.vue'
 
 <template>
   <div>
-    <NuxtLayout name="default">
+    <NuxtLayout name="coming-soon">
       <NuxtPage/>
     </NuxtLayout>
     <GlobalProvider/>
