@@ -26,7 +26,7 @@ const contactMedia = (url: string) => {
             :info="contactInfoData?.contactLinks"
           />
         </div>
-        <NuxtLink :to="contactInfoData?.contactLinks?.[0]?.url" class="w-full md:w-1/2" target="_blank">
+        <NuxtLink v-if="contactInfoData?.image?.formats?.large?.url" :to="contactInfoData?.contactLinks?.[0]?.url" class="w-full md:w-1/2" target="_blank">
           <NuxtImg
             class="h-full w-full object-cover aspect-[375/296] sm:aspect-[1920/1000]"
             :src="contactMedia(contactInfoData?.image?.formats?.large?.url)"

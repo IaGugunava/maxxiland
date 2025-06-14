@@ -19,25 +19,25 @@ const newsItems = computed(() => shopsData?.value?.filter((el: any) => !(el.sale
 <template>
     <div class="pt-12 2xl:pt-20">
         <div class="container">
-            <h1 class="text-dark text-3xl font-bold flex items-start justify-start text-center mb-4">ფასდაკლებები და სიახლეები</h1>
-            <p class="text-dark text-lg mb-8">
+            <h1 v-if="shopsData" class="text-dark text-3xl font-bold flex items-start justify-start text-center mb-4">ფასდაკლებები და სიახლეები</h1>
+            <p v-if="salesItems?.length" class="text-dark text-lg mb-8">
                 ფასდაკლებები
             </p>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-9">
+            <div v-if="salesItems?.length" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-9">
                 <div v-show="checkDateViability(item?.startDate, item?.finishDate)" v-for="item in salesItems">
                     <SalesCard :data="item" :is-sales="item?.sale || item?.price"/>
                 </div>
             </div>
 
-            <div class="relative w-full h-[1px] my-8 bg-dark">
+            <div v-if="shopsData" class="relative w-full h-[1px] my-8 bg-dark">
 
             </div>
 
-            <p class="text-dark text-lg mb-8">
+            <p v-if="newsItems?.length" class="text-dark text-lg mb-8">
                 სიახლეები
             </p>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-9">
+            <div v-if="newsItems?.length" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-9">
                 <div v-for="item in newsItems">
                     <SalesCard :data="item" :is-sales="item?.sale || item?.price"/>
                 </div>

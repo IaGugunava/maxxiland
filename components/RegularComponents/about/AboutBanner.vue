@@ -12,7 +12,7 @@ const aboutBannerMedia = (url: string) => {
 
 <template>
     <div class="py-10">
-        <div class="container flex flex-col md:flex-row gap-10 items-center">
+        <div v-if="aboutBannerData" class="container flex flex-col md:flex-row gap-10 items-center">
             <div class="w-full md:w-1/2 flex justify-end flex-col gap-4">
                 <h1 class="text-dark text-3xl font-bold">{{ aboutBannerData?.title }}</h1>
                 <div class="text-dark text-lg" v-html="aboutBannerData?.description"></div>
