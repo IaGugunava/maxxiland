@@ -18,4 +18,7 @@ const htmlContent = computed(() => editorContent.value ? marked.parse(editorCont
   </div>
 </template>
 
-<style scoped></style>
+<style>
+pre{
+  text-wrap: pretty;
+}</style>

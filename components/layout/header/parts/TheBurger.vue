@@ -37,4 +37,8 @@
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.router-link-active{
+  color: #4235f2;
+}
+</style>
