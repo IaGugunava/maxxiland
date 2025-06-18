@@ -16,7 +16,7 @@ if(!servicesData?.value){
     throw createError({ statusCode: 404, statusMessage: 'Service not found' })
 }
 
-useSeo({ title: servicesData?.value?.title, description: servicesData?.value?.short_description, image: salesMedia(servicesData?.value?.image?.url) })
+useSeo({ title: servicesData?.value?.name, description: servicesData?.value?.short_description, image: salesMedia(servicesData?.value?.image?.url) })
 
 </script>
 
