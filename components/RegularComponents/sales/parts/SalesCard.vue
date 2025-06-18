@@ -45,14 +45,14 @@ const finish = computed(() => formatDate(props.data?.finishDate, 'dd MMMM yyyy')
         <div
           class="relative w-fit before:absolute before:content-[''] before:left-0 before:top-1/2 before:border-red-error before:right-0 before:border-t before:border-2 before:rotate-[-5deg]"
         >
-          <p class="text-3xl text-dark">{{ data?.price + "$" }}</p>
+          <p class="text-3xl text-dark">{{ data?.price + "₾" }}</p>
         </div>
-        <p class="text-3xl text-primary font-bold">{{ reducedPrice + "$" }}</p>
+        <p class="text-3xl text-primary font-bold">{{ reducedPrice + "₾" }}</p>
       </div>
     </div>
 
     <div>
-      <p v-if="isSales">იჩქარეთ, აქცია მოქმედება {{ finish }}-მდე</p>
+      <p v-if="isSales">იჩქარეთ, აქცია მოქმედებს {{ finish }}-მდე</p>
       <p v-else class="line-clamp-3">{{ data?.short_description }}</p>
     </div>
   </NuxtLink>
