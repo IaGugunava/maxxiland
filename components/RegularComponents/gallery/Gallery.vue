@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { EffectCoverflow, Navigation } from "swiper/modules";
+
 // import FsLightbox from 'fslightbox-vue'
 
 // import fancyBox from 'vue-fancybox';
+//@ts-ignore
+import FsLightbox from "fslightbox-vue";
 
 import "swiper/css";
 
@@ -11,9 +14,9 @@ const { data, pending, error } = await apiFetch("/api/galleries?populate=*");
 
 const galleriesData = computed(() => (!error.value ? data?.value?.data : null));
 
-const images = computed(() => {
+const sources = computed(() => {
   return galleriesData.value?.map((el: any) =>
-    galleriesMedia(el.image?.formats?.small?.url)
+    el?.video ? el.video : galleriesMedia(el.image?.formats?.small?.url)
   );
 });
 
@@ -29,7 +32,8 @@ const index = ref(0);
 
 function openLightbox(i: number) {
   index.value = i;
-  show.value = true;
+  show.value = !show.value;
+  console.log("opened")
 }
 
 onMounted(() => {
@@ -119,9 +123,9 @@ onMounted(() => {
         </div>
       </div>
   
-      <vue-easy-lightbox
+      <!-- <vue-easy-lightbox
         :visible="show"
-        :imgs="images"
+        :imgs="sources"
         :index="index"
         @hide="show = false"
         :loop="true"
@@ -131,7 +135,16 @@ onMounted(() => {
         teleport="body"
         class="[&_.vel-img]:!scale-150 lg:[&_.vel-img]:scale-200"
       >
-      </vue-easy-lightbox>
+      </vue-easy-lightbox> -->
+
+      <FsLightbox
+        class="[&_.fslightbox-source]:object-contain lg:[&_.fslightbox-source]:!w-[1280px] lg:[&_.fslightbox-source]:!h-[720px] [&_.fslightbox-video]:!scale-100"
+        :toggler="show"
+        :sources="sources"
+        :slide="index + 1"
+      >
+        
+      </FsLightbox>
     </div>
   </div>
 </template>
