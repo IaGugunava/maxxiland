@@ -20,7 +20,7 @@ const bannerMedia = (url: string) => {
 const progress = ref(1);
 
 function onAutoplayTimeLeft(swiper: any, time: any, progressRatio: any) {
-  progress.value = 1 - progressRatio; // because it starts from 1 and goes to 0
+  progress.value = 1 - progressRatio;
 }
 
 </script>
@@ -41,10 +41,9 @@ function onAutoplayTimeLeft(swiper: any, time: any, progressRatio: any) {
         <SwiperSlide v-for="item in bannersData" :key="item?.id">
           <div class="relative">
             <div class="max-h-[calc(100dvh-90px)] group w-full overflow-hidden">
-
               <NuxtImg
                 class="h-full w-full object-cover aspect-[375/296] sm:aspect-[1920/1000]"
-                :src="bannerMedia(item?.image?.formats?.small?.url)"
+                :src="bannerMedia(item?.image?.formats?.large?.url)"
               />
             </div>
             <div

@@ -102,7 +102,7 @@ onMounted(() => {
         >
           <NuxtImg
             class="aspect-[351/296] h-full w-full object-cover sm:aspect-[768/432] 2xl:aspect-[1920/1080]"
-            :src="galleriesMedia(item?.image?.formats?.small?.url)"
+            :src="galleriesMedia(item?.image?.formats?.medium?.url)"
           />
         </SwiperSlide>
       </Swiper>
