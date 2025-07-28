@@ -32,7 +32,7 @@ const showButton = computed(() => route?.fullPath?.includes('services'))
         <li class="hex" v-for="item in servicesData" :key="item?.id">
           <NuxtLink :to="getSingleUrl('services', item)" class="hexIn">
             <a class="hexLink text-light" href="#">
-              <NuxtImg :src="servicesMedia(item?.image?.formats?.small?.url)" />
+              <NuxtImg :src="servicesMedia(item?.image?.formats?.medium?.url)" />
               <h3 class="text-light bg-primary-opacity">{{ item?.name }}</h3>
               <p class="text-light bg-primary-opacity">{{ item?.short_description }}</p>
             </a>

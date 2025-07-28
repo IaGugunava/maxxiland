@@ -40,7 +40,7 @@ const mainBannerMedia = (url: string) => {
       <div class="w-full lg:w-1/2">
         <NuxtImg
           class="aspect-[351/296] rounded-lg h-full w-full object-cover sm:aspect-[768/432] md:aspect-[480/270] 2xl:aspect-[1920/1080]"
-          :src="mainBannerMedia(mainBannerData?.image?.formats?.small?.url)"
+          :src="mainBannerMedia(mainBannerData?.image?.formats?.medium?.url)"
         />
       </div>
     </div>

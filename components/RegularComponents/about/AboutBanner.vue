@@ -21,7 +21,7 @@ const aboutBannerMedia = (url: string) => {
             <div class="w-full md:w-1/2">
                 <NuxtImg
                 class="aspect-[351/296] rounded-lg h-full w-full object-cover sm:aspect-[344/296] md:aspect-[436/296] 2xl:aspect-[1920/1080]"
-                :src="aboutBannerMedia(aboutBannerData?.image?.formats?.small?.url)"
+                :src="aboutBannerMedia(aboutBannerData?.image?.formats?.medium?.url)"
                 />
             </div>
         </div>
